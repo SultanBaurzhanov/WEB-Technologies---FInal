@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DigitalArt</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="main-background">
+
+    <!--background-->
+    <div class="background">
+
+
+        <!--navbar-->
+        <nav class="navbar navbar-expand-lg">
+            <a id="p-navbar" class="navbar-brand" href="#"><img src="img/brandlogo.png" style="height:40px; width:50px"></i> <b>Everything You Need To Know In Digital Art</b> </a>
+            <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" style="color: #e7809c"> <i class="fas fa-ellipsis-v" style="color: #e7809c"></i> </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="ArtSiteMain.html#section1">Home</a></li>
+                  <li><a class="dropdown-item" href="ArtSiteMain.html#section2">Colors</a></li>
+                  <li><a class="dropdown-item" href="ArtSiteMain.html#section3">Brushes</a></li>
+                  <li><a class="dropdown-item" href="ArtSiteMain.html#section4">Layout</a></li>
+                </ul>
+            </div>
+        </nav>
+
+
+        <!--section 1 contact-->
+        <section id="section1">
+            <div class="heading-boxes">
+                <h1> Contacts </h1>
+            </div>
+        </section>
+        <hr>
+        <div class="about-us">
+            <p id="p-beggining"> You can find out contact lists in this page for further information or application for a job </p>
+        </div>
+        <hr>
+
+
+        <!--contact info-->
+        <section id="section2">
+            <div class="heading-boxes">
+                <h2> Contact Info </h2>
+            </div>
+
+
+            <!--form submission-->
+            <form id="regForm" action="/action_page.php">
+                <h1>Register:</h1>
+                <!-- form steps -->
+                <div class="tab">Your Name:
+                  <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
+                  <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p>
+                </div>
+                <div class="tab">Contact Info:
+                  <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
+                  <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
+                </div>
+                <div class="tab">Birthday in day, month, year:
+                  <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
+                  <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
+                  <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
+                </div>
+                <div class="tab">Login Info:
+                  <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
+                  <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
+                </div>
+                <div style="overflow:auto;">
+                  <div style="float:right;">
+                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                    <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                  </div>
+                </div>
+                <!-- circles -->
+                <div style="text-align:center;margin-top:40px;">
+                  <span class="step"></span>
+                  <span class="step"></span>
+                  <span class="step"></span>
+                  <span class="step"></span>
+                </div>
+              </form>
+              
+              <script>
+              var currentTab = 0; //first/current tab 
+              showTab(currentTab); //show the current tab
+              
+              function showTab(n) {
+                // show specified tab
+                var x = document.getElementsByClassName("tab");
+                x[n].style.display = "block";
+                // previous/next button:
+                if (n == 0) {
+                  document.getElementById("prevBtn").style.display = "none";
+                } else {
+                  document.getElementById("prevBtn").style.display = "inline";
+                }
+                if (n == (x.length - 1)) {
+                  document.getElementById("nextBtn").innerHTML = "Submit";
+                } else {
+                  document.getElementById("nextBtn").innerHTML = "Next";
+                }
+                //show correct step
+                fixStepIndicator(n)
+              }
+              
+              function nextPrev(n) {
+                // which tab to show
+                var x = document.getElementsByClassName("tab");
+                // Exit if any field in tab is wrong:
+                if (n == 1 && !validateForm()) return false;
+                // Hide the current tab
+                x[currentTab].style.display = "none";
+                // Increase or decrease the current tab by 1:
+                currentTab = currentTab + n;
+                // if reached the forms ending
+                if (currentTab >= x.length) {
+                  //form is sumbitted
+                  document.getElementById("regForm").submit();
+                  return false;
+                }
+                // if no, display current tab
+                showTab(currentTab);
+              }
+              
+              function validateForm() {
+                //deals with validation of the form fields
+                var x, y, i, valid = true;
+                x = document.getElementsByClassName("tab");
+                y = x[currentTab].getElementsByTagName("input");
+                //check every input field in the current tab:
+                for (i = 0; i < y.length; i++) {
+                  // If field is empty
+                  if (y[i].value == "") {
+                    // add invalid class
+                    y[i].className += " invalid";
+                    // set current valid to false
+                    valid = false;
+                  }
+                }
+                // If valid, mark step finished and valid
+                if (valid) {
+                  document.getElementsByClassName("step")[currentTab].className += " finish";
+                }
+                return valid; // return the valid status
+              }
+              
+              function fixStepIndicator(n) {
+                //remove the active class of all steps
+                var i, x = document.getElementsByClassName("step");
+                for (i = 0; i < x.length; i++) {
+                  x[i].className = x[i].className.replace(" active", "");
+                }
+                //+ add the active class on the current step
+                x[n].className += " active";
+              }
+              </script>
+            
+            
+        </section>
+
+
+        <!--section3 contact links-->
+        <section id="section3">
+
+
+            <div class="container-list">
+                <div class="contact">
+                    <div class="contact-head"> Call-Center </div>
+                    <p style="font-size: medium; padding-top: 15px"> Working at 9am - 5pm </p>  
+                    <hr>
+                    <p style="font-size: medium"> ArtSite.CallCenter@gmail.com </p>
+                    <p> +8 800 555 35 35 </p>
+                </div>
+                <div class="contact">
+                    <div class="contact-head"> Social Links </div>
+                    <p style="font-size: medium; padding-top: 15px"> <img src="img/twitter_icon.png" style="height: 60px;"> <br>
+                        <a href="#" onclick="redirectToLink('https://X.com/ArtSiteOfficial'); return false;">Visit our Twitter</a>
+                    <hr>
+                    <p style="font-size: medium"> <img src="img/youtube_logo.png" style="height: 30px;">
+                        <a href="#" onclick="redirectToLink('https://youtube.com/channel/UCUZHFZ9jIKrLroW8LcyJEQQ'); return false;">Visit our YouTube Channel</a>
+                    </p>
+                </div>
+                <div class="contact">
+                    <div class="contact-head"> FAQ's </div>
+                    <p style="font-size: medium; padding-top: 15px"> 
+                        <a href="#" onclick="redirectToLink('https://your-faqs-link.com'); return false;">Our Frequently Asked Questions</a> 
+                    </p>  
+                </div>
+            </div>
+
+            <!--redirect link-->
+            <script>
+                function redirectToLink(link) {
+                    alert("You are being redirected to: " + link);
+                    window.location.href = link;
+                }
+            </script>
+
+        </section>
+
+        <br>
+
+        <section id="section5">
+            <nav>
+                <ul>
+                    <li><a href="ArtSiteMain.html">1</a></li>
+                    <li><a href="AboutUs.html">2</a></li>
+                    <li><a href="Contacts.html">3</a></li>
+                </ul>
+            </nav>            
+        </section>
+        <hr> <!--never remove this-->
+
+        
+    </div>
+
+
+    <!--footer-->
+    <footer>
+        <p> All copyright claims go Sultanbaurzhanov1980@gmail.com </p> <br>
+        <p> For any instance of a question contact aforementioned mail </p>
+    </footer>
+
+
+</body>
+
+</html>

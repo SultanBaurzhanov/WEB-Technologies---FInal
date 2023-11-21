@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ArtSite</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="main-background">
+
+
+    <!--background-->
+    <div class="background">
+
+
+        <!--navbar-->
+        <nav class="navbar navbar-expand-lg">
+            <a id="p-navbar" class="navbar-brand" href="#"><img src="img/brandlogo.png" style="height:40px; width:50px"></i> <b>Everything You Need To Know In Digital Art</b> </a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section1">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#section2">Colors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section3">Brushes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section4">Layout</a>
+                    </li>
+            </ul>
+        </nav>
+
+
+        <!--section 1 introduction-->
+        <section id="section1">
+            <div class="heading-boxes">
+                <h1> Digital Art Trivia That You Might Like! </h1>
+            </div>
+
+            <script> /* bouncing h1 */
+                const heading = document.querySelector(".heading-boxes h1");
+                function bounceHeading() {
+                    heading.style.transform = "translateY(-3px)"; /* bounce height */
+                    setTimeout(() => {
+                        heading.style.transform = "translateY(0)";
+                    }, 500); // bounce speed
+                }
+                setInterval(bounceHeading, 1000); // bounce frequency
+            </script>
+        </section>
+        <hr>
+        <p id="p-beggining"> Welcome to the world of digital art trivia! <br> Here, we unravel the fascinating and quirky facts about the digital art universe. <br> From hidden secrets of famous artworks to the evolution of digital tools, our site is your treasure trove of knowledge. <br> Join us on a journey through the unexpected and intriguing side of digital creativity. <br>
+        Whether you're an artist or simply curious, you're in for a fun and enlightening ride into the world of random digital art trivia!</p>
+        <hr>
+    
+
+        <!--section 2 Colors-->
+        <section id="section2">
+            <div class="heading-boxes">
+                <h2> Colors </h2>
+            </div>
+
+            <!--image-->
+            <a href="https://en.wikipedia.org/wiki/Color_theory">
+                <img src="img/1.png" alt="RGB Color Theory" style="float:left;height:230px">
+            </a>
+
+            <div class="row">
+                <div class="box col-lg-12">
+                    <p class="p-styling" style="text-align: left;"> In the visual arts, <b>Color Theory</b> is the body of practical guidance for color mixing and the visual effects of a specific color combination. Color terminology based on the color wheel and its geometry separates colors into primary color, secondary color, and tertiary color <i>(Click the Image for further info)</i>. <span style="color:darkmagenta">Color</span>, as perceived by people, consists of <i>3</i> elements every Artist should be able to change on the flow:</p> <br>
+                </div>
+            </div>
+
+            <!--table-->
+            <table>
+                <tr>
+                    <th style="color:aqua"> Hue </th>
+                    <th> Hue refers to the pure spectrum colors, such as red, blue, and yellow. It represents the basic color names we use to identify different hues </th>
+                </tr>
+                <tr>
+                    <th style="color:lightseagreen"> Saturation </th>
+                    <th> Also known as chroma or intensity, saturation refers to the vividness or richness of color. A highly saturated color appears vibrant and intense, while a desaturated color appears more muted or grayish </th>
+                </tr>
+                <tr>
+                    <th style="color:cadetblue"> Value </th>
+                    <th> Value refers to the brightness or darkness of a color. It is determined by how much black or white is mixed with the pure hue. Higher values result in lighter tints, while lower values create darker shades </th>
+                </tr>
+            </table>
+        </section>
+        <hr>
+
+
+        <!--section3 brushes-->
+        <section id="section3">
+            <div class="heading-boxes">
+                <h3>Brushes</h3>
+            </div>
+        
+            <!--image-->
+            <div class="section3-image">
+                <img src="img/3.jpg" alt="Brushes" style="float:left;height:230px">
+            </div>
+        
+            <div class="row">
+                <div class="box col-lg-12">
+                    <p id="description" class="p-styling" style="text-align: left;">
+                        <b>Brushes</b> in digital art are essential tools used by artists to create various textures, effects, and styles in their digital artwork. They offer a wide range of possibilities, allowing artists to mimic traditional media like oil, watercolor, charcoal, and more. Digital brushes come in diverse forms:
+                    </p>
+                </div>
+            </div>
+        
+            <ul class="section3-list box col-lg-9">
+                <button class="accordion"><b>Basic Brushes</b></button>
+                <div class="panel">
+                    <p>These are the foundation brushes for digital art, including round brushes for sketching and flat brushes for solid fills. They serve as the starting point for most artworks.</p>
+                </div>
+
+                <button class="accordion"><b>Texture Brushes</b></button>
+                <div class="panel">
+                <p>These brushes replicate different textures, such as wood, paper, or fabric, adding depth and realism to digital paintings. They are useful for creating tactile and visually appealing surfaces.</p>
+                </div>
+
+                <button class="accordion"><b>Special Effects Brushes</b></button>
+                <div class="panel">
+                <p>Special effects brushes enable artists to add unique elements like stars, smoke, fire, or lightning to their compositions. These brushes add a touch of magic and fantasy to the artwork.</p>
+                </div>
+
+                <button class="accordion"><b>Inking Brushes</b></button>
+                <div class="panel">
+                <p>Designed to mimic traditional ink pens, inking brushes are precise and often used for outlining, comic book art, or fine linework.</p>
+                </div>
+
+                <button class="accordion"><b>Calligraphy Brushes</b></button>
+                <div class="panel">
+                <p>Popular for lettering and typography, calligraphy brushes offer a variety of styles for creating beautiful and decorative text in artworks.</p>
+                </div>
+
+                <button class="accordion"><b>Custom Brushes</b></button>
+                <div class="panel">
+                <p>Many artists create their own custom brushes, tailored to their specific needs. These can range from complex pattern brushes to brushes that mimic unique strokes or techniques.</p>
+                </div>
+            </ul> 
+
+            <script>
+                var accordions = document.querySelectorAll(".accordion");
+                var description = document.getElementById("description");
+        
+                accordions.forEach(function(accordion) {
+                    accordion.addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.display === "block") {
+                            panel.style.display = "none";
+                            description.style.opacity = 1; //reset the stupid opacity
+                        } else {
+                            panel.style.display = "block";
+                            description.style.opacity = 0.4; //change opacity when opened
+                        }
+                    });
+                });
+            </script>
+        </section>
+        <hr>
+
+
+        <!--section4 ibis paint-->
+        <section id="section4">
+            <div class="heading-boxes">
+                <h4> Standart Canvas Layout </h4>
+            </div>
+
+            <img src="img/4.png" alt="Ibis Paint Layout" style="float:left;height:600px;margin-left:10%;margin-right:30px">
+
+            <div class="p-styling">
+                <p> Any Digital Art program has a complex layout every artist should know of to maximise their efficiency in drawing, because knowing how to draw lines wont cut it for working with an art program. So here's a standart layout of <a href="https://ibispaint.com/">Ibis Paint X</a> - drawing app for mobile devices: </p>
+            </div>
+
+            <div class="i-frame">
+                <iframe src="https://ibispaint.com/lecture/index.jsp?no=04" title="Ibis Paint Site Tutorial"></iframe>
+            </div>
+
+
+            <button id="modalBox">Credits</button>
+
+
+            <div id="myModal" class="modal">
+
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p><a href=https://ibispaint.com/product.jsp> Make sure to check out the program! </a></p>
+            </div>
+
+            </div>
+
+            <script>
+                var modal = document.getElementById("myModal");
+
+                // get button that opens the modal
+                var btn = document.getElementById("modalBox");
+
+                // Get <span> element closing the modal
+                var span = document.getElementsByClassName("close")[0];
+
+                //open the modal
+                btn.onclick = function() {
+                modal.style.display = "block";
+                }
+
+                //close the modal
+                span.onclick = function() {
+                modal.style.display = "none";
+                }
+
+                //close when clicked outside of the box
+                window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+                }
+              </script>
+
+            
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+            <script>
+            let mybutton = document.getElementById("myBtn");
+            
+            // -50px show the button
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+            if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+            }
+            
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+            }
+            </script>
+              
+        </section>
+        
+
+        <section id="section5">
+            <nav>
+                <ul>
+                    <li><a href="ArtSiteMain.html">1</a></li>
+                    <li><a href="AboutUs.html">2</a></li>
+                    <li><a href="Contacts.html">3</a></li>
+                </ul>
+            </nav>            
+        </section>
+        <hr> <!--never remove this-->
+
+    </div>
+
+
+</body>
+
+
+<!--footer-->
+<footer>
+    <p> All copyright claims go Sultanbaurzhanov1980@gmail.com </p> <br>
+    <p> For any instance of a question contact aforementioned mail </p>
+</footer>
+
+
+</html>
